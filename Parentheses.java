@@ -16,7 +16,7 @@ public class Parentheses {
     // pre-condition: The characters in the string only contain the characters "(,),{,},[,]" 
     //post-condtion: Returns true if the brackets are properly matched & in the correct order but will return false otherwise
    
-   1 public static boolean isValid(String characters) {
+    public static boolean isValid(String characters) {
         boolean isChanged;
 
         do{
@@ -26,14 +26,11 @@ public class Parentheses {
                 char current = characters.charAt(i);
                 char next = characters.charAt(i + 1);
                 if ((current == '(' && next == ')' ) || (current == '[' && next == ']') || (current == '{' && next == '}' )) {
-                String before = characters.substring (0,i);
-                String after = characters.substring(i+2);
-                characters = before + after;
-
-                isChanged= true;
-                break; //starts everthing agian in loop
-
-
+                    String before = characters.substring (0,i);
+                    String after = characters.substring(i+2);
+                    characters = before + after;
+                    isChanged= true;
+                    break; //starts everthing agian in loop
                 }
             }
         
@@ -45,14 +42,14 @@ public class Parentheses {
 //post-condition: runs multiple cases and prints true or false whether they are valid or not 
     public static void main(String[]args) {
         System.out.println(isValid("(){}[]")); //true
-System.out.println(isValid("(]")); //false
-System.out.println(isValid("([{({})}])")); //true
-System.out.println(isValid("(([]){})")); //true
-System.out.println(isValid("{}[())()(]")); //false
-System.out.println(isValid("(){}{")); //false
+        System.out.println(isValid("(]")); //false
+        System.out.println(isValid("([{({})}])")); //true
+        System.out.println(isValid("(([]){})")); //true
+        System.out.println(isValid("{}[())()(]")); //false
+        System.out.println(isValid("(){}{")); //false
 
-System.out.println(isValid("([)]")); //false
-System.out.println(isValid("([{}([)])]")); //false
+        System.out.println(isValid("([)]")); //false
+        System.out.println(isValid("([{}([)])]")); //false
     }
 
 }
