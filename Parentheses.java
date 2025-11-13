@@ -47,7 +47,6 @@ public class Parentheses {
         System.out.println(isValid("(([]){})")); //true
         System.out.println(isValid("{}[())()(]")); //false
         System.out.println(isValid("(){}{")); //false
-
         System.out.println(isValid("([)]")); //false
         System.out.println(isValid("([{}([)])]")); //false
     }
